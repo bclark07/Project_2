@@ -14,13 +14,13 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: PORT,
     user: "root",
-    password: "password123",
+    password: null,
     database: "listing_db"
   });
 }
 
 // Error connecting to JAWSDB or localhost
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
