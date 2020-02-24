@@ -1,13 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
 
     var Search = sequelize.define("Search", {
-        // The email cannot be null, and must be a proper email before creation
-        keyword: {
+        company: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // The password cannot be null
-        city: {
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        howToApply: {
             type: DataTypes.STRING,
             allowNull: false
         }
