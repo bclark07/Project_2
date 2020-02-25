@@ -1,24 +1,35 @@
-       <div class="headerWrapper">
-            <div class="logo">
-                <h3>Job Board</h3>
-            </div>
-           <div class="newSearch">
-                <form>
-                    <input type="text" id="keywordSearch" placeholder="Search by Keyword">
-                    <input type="text" id="citySearch" placeholder="Search by City, State">
-                    <button type="submit"><i class="submitSearch"></i>Search</button>
-                    <button type="submit" class="saveSearch"></i>Save Search</button>
-                    <button type="submit" class="logout"></i>Logout</button>
-                </form>
-            </div>
-            
-        </div>
-        <div class="intro">   
-        </div>
-        <div class="listingWrapper">
-            <h2>Current Job Listings</h2>
-        </div>
-        <div class="savedWrapper">
-            <h2>Saved Job Listings</h2>    
-        </div> 
-    </div>
+<div class="headerWrapper">
+  <div class="logo">
+    <h3>Job Board</h3>
+  </div>
+</div>
+<div class="newSearch">
+
+  <input type="text" id="keywordSearch" placeholder="Search by Keyword">
+  <input type="text" id="citySearch" placeholder="Search by City, State">
+  <button type="button" id="searchBtn"><i class="submitSearch"></i>Search</button>
+  <button type="button" class="saveSearch"></i>Save Search</button>
+  <button type="button" class="logout"></i>Logout</button>
+
+</div>
+
+
+<div class="intro">
+</div>
+<div class="listingWrapper">
+  <h2>Current Job Listings</h2>
+</div>
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Search Results <span id="numResults"></span></th>
+    </tr>
+  </thead>
+
+  <tbody id="results">
+
+  </tbody>
+</table>
+<div class="savedWrapper">
+  <h2>Saved Job Listings</h2>
+</div>
