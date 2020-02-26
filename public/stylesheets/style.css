@@ -1,3 +1,6 @@
+h1 h2 h3 h4 h5 {
+    font-weight: bold !important;
+}
 .section-search input {
     padding: 5px !important;
     padding-left: 10px !important;
@@ -26,4 +29,9 @@
 .btn {
     font-size: 24px;
     background-color: teal;
+}
+
+caption.center.align h2 {
+    background: black !important;
+    opacity: 0.3 !important;
 }
