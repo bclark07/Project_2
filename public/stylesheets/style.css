@@ -1,105 +1,11 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+.section-search input{
+  padding: 5px !important;
+  padding-left:10px !important;
+  font-size:20px !important;
+  width: 90% !important;
+  border: #f4f4f4 3px solid !important;
 }
 
-body, html {
-  
-  height:100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; 
-}
-
-h1 { 
-  
-  font-family:  'Cantarell', sans-serif;
-  font-weight: bolder;
-  font-size: 50px !important; 
-  stroke: #3188A8 5px; 
-  text-align: center;
-}
-
-h2 {
-  color: #3d2462 !important;
-  font-family: 'Cantarell', sans-serif;
-  
-  margin-left:20px !important;
-}
-
-h3{
-  margin: 0px !important;
-  font-size: 40px;
-  padding-left:10px;
-  font-family: 'arial', 'sans-serif';
-}
-.headerWrapper{
-  background:white;
-  display: grid;
-  height: 50px;
-
-  grid-template-columns: 25% 75%;
-  grid-column-gap:1em;
- 
-}
-.logo{
-  color:purple;
-  background:white;
-  
-}
-.form-control{
-  
-  width:36% !important;
-  
-  
-}
-
-input{
-  vertical-align: middle;
-  background:white;
-  height:30px;
-  font-size:20px;
-  margin-right:10px;
-  padding:5px;
-  border-radius: 10px;
-  border:1px solid purple;
-  font-weight: bolder;
-}
-
-button{
-  border-radius: 10px;
-  vertical-align: middle;
-  margin-right:20px;
-  font-size: 20px;
-  padding:5px;
-  background:purple;
-  color: white;
-}
-.listingWrapper, .savedWrapper > div{
- 
-  padding:1em;
-}
-.listingWrapper, .savedWrapper{
-  margin-top:2%;
-  border:1px solid #3d2462;
-  border-radius: 10px;
-  display:grid;
-  grid-template-columns: 60% 40%;
-  grid-column-gap:1em;
-  grid-row-gap:1em;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.listingWrapper, .savedWrapper > div{
-  padding:1em;
-}
-
-
-
-.intro{
- color:#3d2462;
-}
-
-.nested{ 
-  display:grid;
+.section-follow .fa-3x{
+  margin:5px 10px;
 }
