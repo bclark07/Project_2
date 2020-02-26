@@ -4,21 +4,26 @@
     font-size: 20px !important;
     width: 90% !important;
     border: #f4f4f4 3px solid !important;
+    color: purple !important;
 }
 
 .section-follow .fa-3x {
     margin: 5px 10px;
 }
 
-.container {
-    margin: 0;
-    width: 100%;
-}
-
 .navbar-fixed {
     width: 100%;
 }
+.nav-wrapper {
+    margin-left: 20px;
+}
 
-.slider {
+.slider .slides ul li {
     position: static;
+    top: 64px !important;
+}
+
+.btn {
+    font-size: 24px;
+    background-color: teal;
 }
