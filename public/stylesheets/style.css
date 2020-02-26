@@ -1,5 +1,11 @@
+/* https://www.google.com/search?q=success&tbm=isch&ved=2ahUKEwiwnsrh3u_nAhWPWN8KHcukD0UQ2-cCegQIABAC&oq=success&gs_l=mobile-gws-wiz-img.3..0i67l5.33529.38186..38423...1.0..0.108.1560.18j1......0....1.......5..35i39j0j35i362i39.1OusBcfxia8&ei=kqpWXrCNAY-x_QbLyb6oBA&bih=736&biw=414&rlz=1C5CHFA_enUS873US873#imgrc=AWK_d9na4C6G4M&imgdii=AytnQNgTGmGnGM */
 h1 h2 h3 h4 h5 {
     font-weight: bold !important;
+}
+
+body {
+    background-image: url("../img/road.jpg");
+    background-size: cover;
 }
 .section-search input {
     padding: 5px !important;
@@ -34,4 +40,8 @@ h1 h2 h3 h4 h5 {
 caption.center.align h2 {
     background: black !important;
     opacity: 0.3 !important;
+}
+
+td {
+    font-size: 18px;
 }
