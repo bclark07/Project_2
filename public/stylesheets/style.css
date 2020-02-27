@@ -51,3 +51,7 @@ caption.center.align h2 {
 p {
     font-size: 20px;
 }
+
+.input-field {
+    color: purple;
+}
