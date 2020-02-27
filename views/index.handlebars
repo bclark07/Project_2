@@ -14,10 +14,10 @@
                     <a href="#about">About Us</a>
                 </li>
                 <li>
-                    <a href="#news">JobBook News</a>
+                    <a href="#savedListings">Saved Listings</a>
                 </li>
                 <li>
-                    <a href="#savedListing">Saved Listing</a>
+                    <a href="login.html">Logout</a>
                 </li>
             </ul>
         </div>
@@ -27,16 +27,16 @@
 
 <ul class="sidenav" id="mobile-nav">
     <li>
-        <a href="#home">Home</a>
+        <a href="../public/members.html">Home</a>
     </li>
     <li>
         <a href="#about">About Us</a>
     </li>
     <li>
-        <a href="#news">JobBook News</a>
+        <a href="#savedListings">Saved Listings</a>
     </li>
     <li>
-        <a href="#savedListings">Saved Listings</a>
+        <a href="../public/login.html">Logout</a>
     </li>
 </ul></section><!-- Secion:Slider --><section class="slider">
 <ul class="slides">
@@ -71,7 +71,7 @@
     </li>
     <li>
         <img
-        src="img/cloud.jpg">
+        src="img/datacenter.jpg">
         <!-- random image -->
         <div class="caption left-align">
             <h2>Save Your Favorites</h2>
@@ -84,25 +84,25 @@
     <div class="col s6">
 
         <div class="input-field">
-            <input type="text" class="white grey-text autocomplete" id="autocomplete-keyword-input" placeholder="Search by Keyword">
+            <input type="text" class="white grey-text autocompleteKeyword" id="autocomplete-keyword-input" placeholder="Search by Keyword">
         </div>
     </div>
     <div class="col s6">
 
         <div class="input-field">
-            <input type="text" class="white grey-text autocomplete" id="autocomplete-location-input" placeholder="Search by Location">
+            <input type="text" class="white grey-text autocompleteLocation" id="autocomplete-location-input" placeholder="Search by Location">
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col s6"></div>
     <div class="col s3">
-        <button class="btn waves-effect waves-light " id="searchBtn" type="submit" name="action">Search Jobs
+        <button class="btn center-align" id="searchBtn" type="submit" name="action">Search Jobs
             {{!-- <i class="material-icons right">send</i> --}}
         </button>
     </div>
     <div class="col s3">
-        <button class="btn waves-effect waves-light " id="saveSearch" type="submit" name="action">Save Search
+        <button class="btn center-align" id="saveSearch" type="submit" name="action">Save Search
             {{!-- <i class="material-icons right">send</i> --}}
         </button>
     </div>
@@ -158,13 +158,21 @@
         interval: 6000
     });
     // Autocomplete
-    const ac = document.querySelector('.autocomplete');
-    M.Autocomplete.init(ac, {
+    const ack = document.querySelector('.autocompleteKeyword');
+    M.Autocomplete.init(acl, {
         data: {
             "Javascript": null,
             "C++": null,
             "Software Engineer": null,
-            "Full Stack Developer": null,
+            "Full Stack Developer": null
+
+        }
+    });
+    // Autocomplete
+    const acl = document.querySelector('.autocompleteLocation');
+    M.Autocomplete.init(acl, {
+        data: {
+
             "Raleigh, North Carolina": null,
             "Durham, North Carolina": null,
             "New York, New York": null,
