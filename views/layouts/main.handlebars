@@ -1,38 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>JobBook</title>
+<head>
+    <meta charset="UTF-8">
+    <title>JobBook</title>
 
-        <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!-- GOOGLE FONTS -->
-        <link
-        href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Cantarell|Julius+Sans+One&display=swap" rel="stylesheet">
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Cantarell|Julius+Sans+One&display=swap"
+        rel="stylesheet">
 
-        <!-- Compiled and minified CSS -->
-        <link
-        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-        <!-- <script src="/public/js/listing.js"></script> -->
-        <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
+    <!-- <script src="/public/js/listing.js"></script> -->
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
 
-    </head>
+</head>
 
-    <body>
+<body>
+    {{!-- I think we can move the navbar stuff into this file --}}
+    <div class="navbar-fixed">
+        <nav class="purple">
+            {{!-- <div class="container"> --}}
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">JobBook</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="../members">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../saved">Saved Listings</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            {{!-- </div> --}}
+        </nav>
+    </div>
 
-        {{{ body }}}
 
-        <!-- FONT AWESOME -->
-        <script src="https://kit.fontawesome.com/b7ff529076.js"></script>
-        <!-- Jquery -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="/js/search.js"></script>
-        <script src="https://kit.fontawesome.com/4a0e08e66c.js" crossorigin="anonymous"></script>
-    </body>
+    {{{ body }}}
+
+    <section id="search" class="section section-search purple darken-1 white-text center scrollspy">
+    </section>
+
+    <section class="section section-follow purple darken-3 white-text center scrollspy">
+        {{!-- <div class="container"> --}}
+        <div class="row">
+            <div class="col s12">
+                <h5>Follow JobBook</h5>
+                <a href="#" class="white-text">
+                    <i class="fab fa-twitter fa-3x"></i>
+                </a>
+                <a href="#" class="white-text">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="#" class="white-text">
+                    <i class="fab fa-google-plus fa-3x"></i>
+                </a>
+            </div>
+        </div>
+        {{!-- </div> --}}
+    </section>
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/b7ff529076.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="https://kit.fontawesome.com/4a0e08e66c.js" crossorigin="anonymous"></script>
+</body>
 
 </html>

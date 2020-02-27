@@ -11,129 +11,128 @@
 // This function grabs posts from the database and updates the view
 
 function getSaved() {
-    $.get("/api/listings", function(data) {
-        console.log("Listings: ", data);
-        listings = data;
-        if (!listings || !listings.length) {
-            console.log("hey");
-        } else {
-            initializeRows(listings);
-        }
-    });
+  $.get("/api/listings", function(data) {
+    console.log("Listings: ", data);
+    listings = data;
+    if (!listings || !listings.length) {
+      console.log("hey");
+    } else {
+      initializeRows(listings);
+    }
+  });
 }
 
 function initializeRows(listings) {
-    // blogContainer.empty(); should be used to empty search container
-    var savedJobs = [];
-    for (var i = 0; i < listings.length; i++) {
-        console.log("saved listing" + i + ";" + listings[i]);
-        savedJobs.push(CreateSavedEntry(listings[i]));
-    }
-    // blogContainer.append(savedJobs);
+  // blogContainer.empty(); should be used to empty search container
+  var savedJobs = [];
+  for (var i = 0; i < listings.length; i++) {
+    console.log("saved listing" + i + ";" + listings[i]);
+    savedJobs.push(CreateSavedEntry(listings[i]));
+  }
+  // blogContainer.append(savedJobs);
 }
 
 $(function() {
-    //on page load want to populate html with already saved jobs
-    getSaved();
+  //on page load want to populate html with already saved jobs
+  getSaved();
 
-    // On-click for starting the job search.
-    $("#searchBtn").on("click", function() {
-        //put in code to clear previous search results
-        console.log("Search has been clicked.");
+  // On-click for starting the job search.
+  $("#searchBtn").on("click", function() {
+    $("#results").empty();
+    console.log("Search has been clicked.");
 
-        var keyword = $("#autocomplete-keyword-input").val();
-        var location = $("#autocomplete-location-input").val();
+    var keyword = $("#autocomplete-keyword-input").val();
+    var location = $("#autocomplete-location-input").val();
 
-        // This portion gets the API's information based off your search
-        if (keyword.length > 0 && location.length > 0) {
-            $.get("/api/listings/" + keyword + "/" + location).then(function(
-                data
-            ) {
-                console.log(data);
-                //returns json response with job results
+    // This portion gets the API's information based off your search
+    if (keyword.length > 0 && location.length > 0) {
+      //   console.log("url: /api/listings/" + keyword + "/" + location);
+      $.get("/api/listings/" + keyword + "/" + location).then(function(data) {
+        console.log(data);
+        //returns json response with job results
 
-                // For-Loop that dynamically adds data in tables using Materialize i.e. What you see after you hit search
-                for (var i = 0; i < data.length; i++) {
-                    var row = $("<tr>");
-                    var td = $("<td>");
-                    td.append(
-                        data[i].title +
-                            "<br>" +
-                            data[i].location +
-                            "<br>" +
-                            data[i].company +
-                            "<br>" +
-                            data[i].how_to_apply +
-                            "<br>" +
-                            data[i].created_at
-                    );
+        // For-Loop that dynamically adds data in tables using Materialize i.e. What you see after you hit search
+        for (var i = 0; i < data.length; i++) {
+          var row = $("<tr>");
+          var td = $("<td>");
+          td.append(
+            data[i].title +
+              "<br>" +
+              data[i].location +
+              "<br>" +
+              data[i].company +
+              "<br>" +
+              data[i].how_to_apply +
+              "<br>" +
+              data[i].created_at
+          );
 
-                    //   Dynamically created Save button and adding data attributes to them
-                    var button = $("<button>");
-                    button.text("Save");
-                    button.attr("class", "saveBtn");
-                    button.attr("data-id", data[i].id);
-                    button.attr("data-index", i);
+          //   Dynamically created Save button and adding data attributes to them
+          var button = $("<button>");
+          button.text("Save");
+          button.attr("class", "saveBtn");
+          button.attr("data-id", data[i].id);
+          button.attr("data-index", i);
 
-                    //   Adds everything to table
-                    td.append(button);
-                    row.append(td);
-                    $("#results").append(row);
-                }
-
-                $("#numResults").html(data.length);
-
-                // Save button that saves data to our database
-                $(".saveBtn").on("click", function() {
-                    var i = $(this).attr("data-index");
-                    console.log(data[i]);
-                    var savedListing = {};
-
-                    savedListing.company = data[i].company;
-                    savedListing.location = data[i].location;
-                    savedListing.title = data[i].title;
-                    savedListing.howToApply = data[i].how_to_apply;
-
-                    $.ajax("/api/saved-listings", {
-                        type: "POST",
-                        data: savedListing
-                    }).then(function() {
-                        console.log("Save has been clicked.");
-                        CreateSavedEntry(savedListing);
-                    });
-                });
-            });
+          //   Adds everything to table
+          td.append(button);
+          row.append(td);
+          $("#results").append(row);
         }
-    });
+
+        $("#numResults").html(data.length);
+
+        // Save button that saves data to our database
+        $(".saveBtn").on("click", function() {
+          var i = $(this).attr("data-index");
+          console.log(data[i]);
+          var savedListing = {};
+
+          savedListing.company = data[i].company;
+          savedListing.location = data[i].location;
+          savedListing.title = data[i].title;
+          savedListing.howToApply = data[i].how_to_apply;
+
+          $.ajax("/api/saved-listings", {
+            type: "POST",
+            data: savedListing
+          }).then(function() {
+            console.log("Save has been clicked.");
+            CreateSavedEntry(savedListing);
+          });
+        });
+      });
+    }
+  });
 });
 
 function CreateSavedEntry(data) {
-    //write saved jobs to the viewpane
-    var faveRow = $("<tr>");
-    var faveTd = $("<td>");
-    faveTd.append(
-        data.title + //data[i].title +
-        "<br>" +
-        data.location + //data[i].location +
-        "<br>" +
-        data.company + // data[i].company +
-            "<br>" +
-            data.howToApply //+ // data[i].how_to_apply +
-        // "<br>" +
-        // data[i].created_at
-    );
+  //write saved jobs to the viewpane
+  var faveRow = $("<tr>");
+  var faveTd = $("<td>");
+  faveTd.append(
+    data.title + //data[i].title +
+    "<br>" +
+    data.location + //data[i].location +
+    "<br>" +
+    data.company + // data[i].company +
+      "<br>" +
+      data.howToApply //+ // data[i].how_to_apply +
+    // "<br>" +
+    // data[i].created_at
+  );
 
-    //   Dynamically created Delete button and adding data attributes to them
-    var button = $("<button>");
-    button.text("Delete");
-    button.attr("class", "deleteBtn");
-    button.attr("data-id", data.id);
-    // button.attr("data-index", i);
+  //   Dynamically created Delete button and adding data attributes to them
+  var button = $("<button>");
+  button.text("Delete");
+  button.attr("class", "deleteBtn");
+  button.attr("data-id", data.id);
+  // button.attr("data-index", i);
 
-    //   Adds everything to table
-    faveTd.append(button);
-    faveRow.append(faveTd);
-    $("#saved").append(faveRow);
+  //   Adds everything to table
+  faveTd.append(button);
+  faveRow.append(faveTd);
+  $("#saved").append(faveRow);
 }
 
 // NOTE FROM CLINT: This is most of the code I wrote over, including the API. I'm leaving it here for now, but feel free to delete if we no longer need it.

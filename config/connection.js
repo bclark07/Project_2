@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: PORT,
     user: "root",
-    password: null,
+    password: Password1,
     database: "listing_db"
   });
 }

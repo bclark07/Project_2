@@ -9,7 +9,22 @@ module.exports = function(app) {
   // GitHub Job Post API Call
   app.get("/api/listings/:keyword/:location", function(req, res) {
     var keyword = req.params.keyword;
+    console.log("keyword: " + keyword);
     var location = req.params.location;
+    console.log("location: " + location);
+    // if (keyword !== "" && location === "") {
+    //   axios
+    //     .get("https://jobs.github.com/positions.json?description=" + keyword)
+    //     .then(function(response) {
+    //       res.json(response.data);
+    //     });
+    // } else if (keyword === "" && location !== "") {
+    //   axios
+    //     .get("https://jobs.github.com/positions.json?location=" + location)
+    //     .then(function(response) {
+    //       res.json(response.data);
+    //     });
+    // } else {
     axios
       .get(
         "https://jobs.github.com/positions.json?description=" +
@@ -20,6 +35,7 @@ module.exports = function(app) {
       .then(function(response) {
         res.json(response.data);
       });
+    // }
   });
 
   // Finding all listings

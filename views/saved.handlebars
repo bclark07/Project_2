@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12">
+        <h4>Saved Job Listings</h4>
+        <table class="highlight">
+            <thead>
+            </thead>
+            <tbody id="saved">
+                {{#each listings}}
+                <tr>
+                    <td>{{title}}</td>
+                    <br>
+                    <td>{{location}}</td>
+                    <br>
+                    <td>{{company}}</td>
+                    <br>
+                    <td>{{howToApply}}</td>
+                    <!--href embeded in the table object, manipulate with target="_blank"? -->
+                </tr>
+                <button class="deleteBtn">Delete</button>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
