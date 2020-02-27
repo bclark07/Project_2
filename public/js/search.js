@@ -39,6 +39,7 @@ $(function() {
     // On-click for starting the job search.
     $("#searchBtn").on("click", function() {
         //put in code to clear previous search results
+        $("#results").empty();
         console.log("Search has been clicked.");
 
         var keyword = $("#autocomplete-keyword-input").val();
