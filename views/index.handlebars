@@ -1,203 +1,153 @@
-<div class="navbar-fixed">
-    <nav class="purple">
+</section><!-- Secion:Slider -->
+<section class="slider">
+    <ul class="slides">
+        <li>
+            <img src="./img/doors.jpg">
+            <!-- random image -->
+            <div class="caption center-align">
+                <h2>Find New Doors to Open</h2>
+                <h5 class="light grey-text text-lighten-3 hide-on-small-only">
+                    Our database has listing for thousands of companies so that you can find your dream job</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/jumping.jpg">
+            <!-- random image -->
+            <div class="caption left-align">
+                <h2>Superior Job Search</h2>
+                <h5 class="light grey-text text-lighten-3">
+                    Take your job search to new heights searching a wide selection of jobs by using a keyword and/or
+                    location</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/fingerTips.jpg">
+            <!-- random image -->
+            <div class="caption center-align">
+                <h2>Information at your finger tips.</h2>
+                <h5 class="light grey-text text-lighten-3">Navigate loads of information such as company name, job
+                    location, and a detailed description for each listing</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/datacenter.jpg">
+            <!-- random image -->
+            <div class="caption left-align">
+                <h2>Save Your Favorites</h2>
+                <h5 class="light grey-text text-lighten-3">The ability to save your job searches and your favorite job
+                    listing to the cloud makes resuming your search a breeze</h5>
+            </div>
+        </li>
+    </ul>
+</section>
+<section id="search" class="section section-search purple darken-1 white-text center scrollspy">
+    {{!-- <div class="container"> --}}
+    <div class="row">
+        <div class="col s6">
+
+            <div class="input-field">
+                <input type="text" class="white grey-text autocompleteKeyword" id="autocomplete-keyword-input"
+                    placeholder="Search by Keyword">
+            </div>
+        </div>
+        <div class="col s6">
+
+            <div class="input-field">
+                <input type="text" class="white grey-text autocompleteLocation" id="autocomplete-location-input"
+                    placeholder="Search by Location">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6"></div>
+        <div class="col s3">
+            <button class="btn center-align" id="searchBtn" type="submit" name="action">Search Jobs
+                {{!-- <i class="material-icons right">send</i> --}}
+            </button>
+        </div>
+        <div class="col s3">
+            <button class="btn center-align" id="saveSearch" type="submit" name="action">Save Search
+                {{!-- <i class="material-icons right">send</i> --}}
+            </button>
+        </div>
+    </div>
+    {{!-- </div> --}}
+    <section id="jobListings" class="section section-search purple darken-2 white-text center scrollspy">
         {{!-- <div class="container"> --}}
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">JobBook</a>
-            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About Us</a>
-                </li>
-                <li>
-                    <a href="#savedListings">Saved Listings</a>
-                </li>
-                <li>
-                    <a href="login.html">Logout</a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col s12">
+                <h4>Current Job Listings</h4>
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Search Results
+                                <span id="numResults"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="results"></tbody>
+                </table>
+            </div>
         </div>
         {{!-- </div> --}}
-    </nav>
-</div>
+    </section>
+    <section class="section section-follow purple darken-3 white-text center scrollspy">
+        {{!-- <div class="container"> --}}
+        <div class="row">
+            <div class="col s12">
+                <h5>Follow JobBook</h5>
+                <a href="#" class="white-text">
+                    <i class="fab fa-twitter fa-3x"></i>
+                </a>
+                <a href="#" class="white-text">
+                    <i class="fab fa-linkedin fa-3x"></i>
+                </a>
+                <a href="#" class="white-text">
+                    <i class="fab fa-google-plus fa-3x"></i>
+                </a>
+            </div>
+        </div>
+        {{!-- </div> --}}
+    </section><!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Sidenav
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
+        // Slider
+        const slider = document.querySelector('.slider');
+        M.Slider.init(slider, {
+            indicators: false,
+            height: 500,
+            transition: 500,
+            interval: 6000
+        });
+        // Autocomplete
+        const ack = document.querySelector('.autocompleteKeyword');
+        M.Autocomplete.init(ack, {
+            data: {
+                "Javascript": null,
+                "C++": null,
+                "Software Engineer": null,
+                "Full Stack Developer": null
 
-<ul class="sidenav" id="mobile-nav">
-    <li>
-        <a href="members.html">Home</a>
-    </li>
-    <li>
-        <a href="#about">About Us</a>
-    </li>
-    <li>
-        <a href="#savedListings">Saved Listings</a>
-    </li>
-    <li>
-        <a href="../public/login.html">Logout</a>
-    </li>
-</ul></section><!-- Secion:Slider --><section class="slider">
-<ul class="slides">
-    <li>
-        <img
-        src="./img/doors.jpg">
-        <!-- random image -->
-        <div class="caption center-align">
-            <h2>Find New Doors to Open</h2>
-            <h5 class="light grey-text text-lighten-3 hide-on-small-only">
-                Our database has listing for thousands of companies so that you can find your dream job</h5>
-        </div>
-    </li>
-    <li>
-        <img
-        src="img/jumping.jpg">
-        <!-- random image -->
-        <div class="caption left-align">
-            <h2>Superior Job Search</h2>
-            <h5 class="light grey-text text-lighten-3">
-                Take your job search to new heights searching a wide selection of jobs by using a keyword and/or location</h5>
-        </div>
-    </li>
-    <li>
-        <img
-        src="img/fingerTips.jpg">
-        <!-- random image -->
-        <div class="caption center-align">
-            <h2>Information at your finger tips.</h2>
-            <h5 class="light grey-text text-lighten-3">Navigate loads of information such as company name, job location, and a detailed description for each listing</h5>
-        </div>
-    </li>
-    <li>
-        <img
-        src="img/datacenter.jpg">
-        <!-- random image -->
-        <div class="caption left-align">
-            <h2>Save Your Favorites</h2>
-            <h5 class="light grey-text text-lighten-3">The ability to save your job searches and your favorite job listing to the cloud makes resuming your search a breeze</h5>
-        </div>
-    </li>
-</ul></section><section id="search" class="section section-search purple darken-1 white-text center scrollspy">
-{{!-- <div class="container"> --}}
-<div class="row">
-    <div class="col s6">
+            }
+        });
+        // Autocomplete
+        const acl = document.querySelector('.autocompleteLocation');
+        M.Autocomplete.init(acl, {
+            data: {
 
-        <div class="input-field">
-            <input type="text" class="white grey-text autocompleteKeyword" id="autocomplete-keyword-input" placeholder="Search by Keyword">
-        </div>
-    </div>
-    <div class="col s6">
-
-        <div class="input-field">
-            <input type="text" class="white grey-text autocompleteLocation" id="autocomplete-location-input" placeholder="Search by Location">
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col s6"></div>
-    <div class="col s3">
-        <button class="btn center-align" id="searchBtn" type="submit" name="action">Search Jobs
-            {{!-- <i class="material-icons right">send</i> --}}
-        </button>
-    </div>
-    <div class="col s3">
-        <button class="btn center-align" id="saveSearch" type="submit" name="action">Save Search
-            {{!-- <i class="material-icons right">send</i> --}}
-        </button>
-    </div>
-</div>
-{{!-- </div> --}}
-<section id="jobListings" class="section section-search purple darken-2 white-text center scrollspy">
-    {{!-- <div class="container"> --}}
-    <div class="row">
-        <div class="col s12">
-            <h4>Current Job Listings</h4>
-            <table class="highlight">
-                <thead>
-                    <tr>
-                        <th>Search Results
-                            <span id="numResults"></span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="results"></tbody>
-            </table>
-        </div>
-    </div>
-    {{!-- </div> --}}
-</section>
-<section class="section section-follow purple darken-3 white-text center scrollspy">
-    {{!-- <div class="container"> --}}
-    <div class="row">
-        <div class="col s12">
-            <h5>Follow JobBook</h5>
-            <a href="#" class="white-text">
-                <i class="fab fa-twitter fa-3x"></i>
-            </a>
-            <a href="#" class="white-text">
-                <i class="fab fa-linkedin fa-3x"></i>
-            </a>
-            <a href="#" class="white-text">
-                <i class="fab fa-google-plus fa-3x"></i>
-            </a>
-        </div>
-    </div>
-    {{!-- </div> --}}
-</section><!-- Compiled and minified JavaScript --><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-    // Sidenav
-    const sideNav = document.querySelector('.sidenav');
-    M.Sidenav.init(sideNav, {});
-    // Slider
-    const slider = document.querySelector('.slider');
-    M.Slider.init(slider, {
-        indicators: false,
-        height: 500,
-        transition: 500,
-        interval: 6000
-    });
-    // Autocomplete
-    const ack = document.querySelector('.autocompleteKeyword');
-    M.Autocomplete.init(acl, {
-        data: {
-            "Javascript": null,
-            "C++": null,
-            "Software Engineer": null,
-            "Full Stack Developer": null
-
-        }
-    });
-    // Autocomplete
-    const acl = document.querySelector('.autocompleteLocation');
-    M.Autocomplete.init(acl, {
-        data: {
-
-            "Raleigh, North Carolina": null,
-            "Durham, North Carolina": null,
-            "New York, New York": null,
-            "San Jose, California": null,
-            "Atlanta, Georgia": null,
-            "Palo Alto, California": null,
-            "Los Angelos, California": null,
-            "Atlanta, Georgia": null,
-            "Alexandria, Virginia": null,
-            "Seatle, Washington": null
-        }
-    });
-</script>
-{{!--  
-<div class="savedWrapper">
-  <h2>Saved Job Listings</h2>
-</div>
-<table class="highlight">
-  <thead>
-    <tr>
-      <th>Saved Job Openings<span id="numSaved"></span></th>
-    </tr>
-  </thead>
-
-  <tbody id="saved">
-
-  </tbody>
-</table>--}}
+                "Raleigh, North Carolina": null,
+                "Durham, North Carolina": null,
+                "New York, New York": null,
+                "San Jose, California": null,
+                "Atlanta, Georgia": null,
+                "Palo Alto, California": null,
+                "Los Angelos, California": null,
+                "Atlanta, Georgia": null,
+                "Alexandria, Virginia": null,
+                "Seatle, Washington": null
+            }
+        });
+    </script>

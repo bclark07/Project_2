@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col s12">
+        <h4>Saved Job Listings</h4>
+        <table class="highlight">
+            <thead>
+            </thead>
+            <tbody id="saved">
+                {{#each saved}}
+                <tr>{{title}}</tr>
+                <br>
+                <tr>{{location}}</tr>
+                <br>
+                <tr>{{company}}</tr>
+                <br>
+                <tr>{{howToApply}}</tr>
+                <br>
+                <!--href embeded in the table object, would need to store differently to manipulate with target="_blank"? -->
+                <button class="deleteBtn">Delete</button>
+                <br>
+                <br>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

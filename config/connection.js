@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
     host: "localhost",
     port: PORT,
-    user: "root",
+    user: "Password1",
     password: null,
     database: "listing_db"
   });
