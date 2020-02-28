@@ -7,6 +7,7 @@ var axios = require("axios");
 
 module.exports = function(app) {
   // GitHub Job Post API Call
+  // Both
   app.get("/api/listings/:keyword/:location", function(req, res) {
     var keyword = req.params.keyword;
     var location = req.params.location;
@@ -22,7 +23,27 @@ module.exports = function(app) {
       });
   });
 
-  // Finding all listings
+  // Location ONLY
+  app.get("/api/listings/:location", function(req, res) {
+    var location = req.params.location;
+    axios
+      .get("https://jobs.github.com/positions.json?location=" + location)
+      .then(function(response) {
+        res.json(response.data);
+      });
+  });
+
+  // Keyword ONLY
+  app.get("/api/listings/:keyword", function(req, res) {
+    var keyword = req.params.keyword;
+    axios
+      .get("https://jobs.github.com/positions.json?description=" + keyword)
+      .then(function(response) {
+        res.json(response.data);
+      });
+  });
+
+  // // Finding all listings
   app.get("/api/listings", function(req, res) {
     db.Listings.findAll({}).then(function(data) {
       res.json(data);
