@@ -1,4 +1,3 @@
-
 $(function() {
   //on page load want to populate html with already saved jobs
 
@@ -110,7 +109,6 @@ $(function() {
 
         // Save button that saves data to our database
         $(".saveBtn").on("click", function() {
-
           console.log("Save has been clicked.");
           var i = $(this).attr("data-index");
 
@@ -167,36 +165,31 @@ $(function() {
         }
 
         $("#numResults").html(data.length);
-        
-                  });
-        });
       });
     } else {
       alert("Please enter a job search.");
-} /////FIX ALL THE THINGS HERE
-
-        // Save button that saves data to our database
-        $(".saveBtn").on("click", function() {
-          var i = $(this).attr("data-index");
-          console.log(data[i]);
-          var savedListing = {};
-
-          savedListing.company = data[i].company;
-          savedListing.location = data[i].location;
-          savedListing.title = data[i].title;
-          savedListing.howToApply = data[i].how_to_apply;
-          savedListing.jobID = data[i].id;
-
-          $.ajax("/api/saved-listings", {
-            type: "POST",
-            data: savedListing
-          }).then(function() {
-            console.log("Save has been clicked.");
-/////AND FIX THEM HERE
-          });
-        });
-      });
-
     }
+    /////FIX ALL THE THINGS HERE
+
+    // Save button that saves data to our database
+    $(".saveBtn").on("click", function() {
+      var i = $(this).attr("data-index");
+      console.log(data[i]);
+      var savedListing = {};
+
+      savedListing.company = data[i].company;
+      savedListing.location = data[i].location;
+      savedListing.title = data[i].title;
+      savedListing.howToApply = data[i].how_to_apply;
+      savedListing.jobID = data[i].id;
+
+      $.ajax("/api/saved-listings", {
+        type: "POST",
+        data: savedListing
+      }).then(function() {
+        console.log("Save has been clicked.");
+        /////AND FIX THEM HERE
+      });
+    });
   });
 });
