@@ -11,6 +11,20 @@ module.exports = function(app) {
   app.get("/api/listings/:keyword/:location", function(req, res) {
     var keyword = req.params.keyword;
     var location = req.params.location;
+
+    // if (keyword !== "" && location === "") {
+    //   axios
+    //     .get("https://jobs.github.com/positions.json?description=" + keyword)
+    //     .then(function(response) {
+    //       res.json(response.data);
+    //     });
+    // } else if (keyword === "" && location !== "") {
+    //   axios
+    //     .get("https://jobs.github.com/positions.json?location=" + location)
+    //     .then(function(response) {
+    //       res.json(response.data);
+    //     });
+    // } else {
     axios
       .get(
         "https://jobs.github.com/positions.json?description=" +
@@ -51,15 +65,15 @@ module.exports = function(app) {
   });
 
   // Finding one search based off ID
-  app.get("/api/listings:id", function(req, res) {
-    db.Listings.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(data) {
-      res.json(data);
-    });
-  });
+  // app.get("/api/listings:id", function(req, res) {
+  //   db.Listings.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(function(data) {
+  //     res.json(data);
+  //   });
+  // });
 
   // Route to save our data to the listing page
   app.post("/api/saved-listings", function(req, res) {
@@ -72,7 +86,7 @@ module.exports = function(app) {
   app.delete("/api/listings/:id", function(req, res) {
     db.Listings.destroy({
       where: {
-        id: req.params.id
+        jobID: req.params.id
       }
     }).then(function(data) {
       res.json(data);

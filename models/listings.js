@@ -15,6 +15,10 @@ module.exports = function(sequelize, DataTypes) {
     howToApply: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    jobID: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   return Listings;
