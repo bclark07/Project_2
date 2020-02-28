@@ -12,6 +12,7 @@ $(function() {
     var location = $("#autocomplete-location-input").val();
 
     // This portion gets the API's information based off your search
+
     // Both Searches
     if (keyword.length > 0 && location.length > 0) {
       $.get("/api/listings/" + keyword + "/" + location).then(function(data) {
@@ -109,8 +110,10 @@ $(function() {
 
         // Save button that saves data to our database
         $(".saveBtn").on("click", function() {
+
+          console.log("Save has been clicked.");
           var i = $(this).attr("data-index");
-          console.log(data[i]);
+
           var savedListing = {};
 
           savedListing.company = data[i].company;
@@ -164,6 +167,13 @@ $(function() {
         }
 
         $("#numResults").html(data.length);
+        
+                  });
+        });
+      });
+    } else {
+      alert("Please enter a job search.");
+} /////FIX ALL THE THINGS HERE
 
         // Save button that saves data to our database
         $(".saveBtn").on("click", function() {
@@ -182,12 +192,11 @@ $(function() {
             data: savedListing
           }).then(function() {
             console.log("Save has been clicked.");
-
+/////AND FIX THEM HERE
           });
         });
       });
-    } else {
-      alert("Please enter a job search.");
+
     }
   });
 });
