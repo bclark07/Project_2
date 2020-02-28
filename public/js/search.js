@@ -116,6 +116,7 @@ $(function() {
           savedListing.location = data[i].location;
           savedListing.title = data[i].title;
           savedListing.howToApply = data[i].how_to_apply;
+          savedListing.jobID = data[i].id;
 
           $.ajax("/api/saved-listings", {
             type: "POST",
