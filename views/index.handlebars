@@ -41,7 +41,6 @@
     </ul>
 </section>
 <section id="search" class="section section-search purple darken-1 white-text center scrollspy">
-    {{!-- <div class="container"> --}}
     <div class="row">
         <div class="col s6">
 
@@ -59,21 +58,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s6"></div>
-        <div class="col s3">
-            <button class="btn center-align" id="searchBtn" type="submit" name="action">Search Jobs
-                {{!-- <i class="material-icons right">send</i> --}}
+        <div class="col s3"></div>
+        <div class="col s6">
+            <button class="btn center" id="searchBtn" type="submit" name="action">Search Jobs
             </button>
         </div>
-        <div class="col s3">
-            <button class="btn center-align" id="saveSearch" type="submit" name="action">Save Search
-                {{!-- <i class="material-icons right">send</i> --}}
-            </button>
-        </div>
+        <div class="col s3"></div>
     </div>
-    {{!-- </div> --}}
     <section id="jobListings" class="section section-search purple darken-2 white-text center scrollspy">
-        {{!-- <div class="container"> --}}
         <div class="row">
             <div class="col s12">
                 <h4>Current Job Listings</h4>
@@ -89,10 +81,8 @@
                 </table>
             </div>
         </div>
-        {{!-- </div> --}}
     </section>
     <section class="section section-follow purple darken-3 white-text center scrollspy">
-        {{!-- <div class="container"> --}}
         <div class="row">
             <div class="col s12">
                 <h5>Follow JobBook</h5>
@@ -107,7 +97,6 @@
                 </a>
             </div>
         </div>
-        {{!-- </div> --}}
     </section><!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -130,6 +119,7 @@
                 "C++": null,
                 "Software Engineer": null,
                 "Full Stack Developer": null
+
             }
         });
         // Autocomplete
@@ -137,20 +127,19 @@
         M.Autocomplete.init(acl, {
             data: {
 
-                "Austin, TX": null,
-                "Boston, MA": null,
-                "Columbus, OH": null,
                 "Raleigh, North Carolina": null,
                 "Durham, North Carolina": null,
                 "New York, New York": null,
-                "San Francisco, California": null,
+                "San Jose, California": null,
                 "Atlanta, Georgia": null,
                 "Palo Alto, California": null,
-                "Los Angeles, California": null,
                 "Atlanta, Georgia": null,
                 "Alexandria, Virginia": null,
-                "Seattle, Washington": null,
-                "Remote": null
+                "Seatle, Washington": null,
+                "San Francisco, California": null,
+                "Los Angeles, California": null,
+                "Boston, Massachusetts": null
+                
             }
         });
     </script>
