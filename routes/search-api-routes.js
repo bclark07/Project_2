@@ -54,15 +54,15 @@ module.exports = function(app) {
   });
 
   // Route to get data from listings db - used on search.js
-  app.get("/api/saved-listings", function(req, res) {
-    db.Listings.findAll({
-      where: {
-        jobID: req.params.id
-      }
-    }).then(function(response) {
-      res.json(response);
-    });
-  });
+  // app.get("/api/saved-listings", function(req, res) {
+  //   db.Listings.findAll({
+  //     where: {
+  //       jobID: req.params.id
+  //     }
+  //   }).then(function(response) {
+  //     res.json(response);
+  //   });
+  // });
 
   // Delete Route  - used on savedfunctions.js
   app.delete("/api/listings/:id", function(req, res) {
