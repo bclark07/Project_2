@@ -54,13 +54,14 @@ function generateResults(data) {
         "<br>" +
         data[i].how_to_apply +
         "<br>" +
-        data[i].created_at
+        data[i].created_at +
+        "<br><br>"
     );
 
     //   Dynamically created Save button and adding data attributes to them
     var button = $("<button>");
     button.text("Save");
-    button.attr("class", "saveBtn");
+    button.attr("class", "saveBtn waves-effect waves-light btn");
     button.attr("data-id", data[i].id);
     button.attr("data-index", i);
 
