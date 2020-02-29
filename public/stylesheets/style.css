@@ -55,3 +55,25 @@ p {
 .input-field {
     color: purple;
 }
+
+html {
+    background: #8E24AA;
+}
+
+/* #saved {
+    color: #ffffff;
+} */
+
+.saved-table {
+    color: white;
+}
+
+.saveBtn {
+    background: teal;
+    color: white;
+}
+
+.deleteBtn {
+    background: teal;
+    color: white;
+}
