@@ -29,12 +29,10 @@ module.exports = function(app) {
   });
 
   app.get("/saved", isAuthenticated, function(req, res) {
-    // console.log("start" + db.Listings.findAll());
     console.log("start data");
     db.Listings.findAll({ raw: true }).then(function(data) {
       console.log(data);
       res.render("saved", {
-        // saved: listTest
         saved: data
       });
     });
