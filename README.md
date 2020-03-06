@@ -18,7 +18,7 @@
 -   No configuration necessory. Works on muost mainstream browsers.
 -   To find new and exciting opportunities, visit the following link to experience the Job Book:
 
-https://jobbook.herokuapp.com
+https://job-book2.herokuapp.com/
 
 **_Installation instructions_**
 
